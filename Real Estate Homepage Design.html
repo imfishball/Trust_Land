@@ -122,6 +122,13 @@
       header.site.open .mobile-nav{display:block}
       @media (max-width:1080px){ nav.main{display:none} .burger{display:grid} .header-actions{margin-left:auto} }
       @media (max-width:620px){ .btn-enquiry{display:none} .wordmark{font-size:20px} .header-in{height:72px;gap:20px} }
+      /* Màn rất hẹp (≤375px): nén header để nút menu không bị đẩy ra ngoài viewport */
+      @media (max-width:375px){
+        .header-in{padding:0 16px;gap:12px}
+        .wordmark{font-size:17px;letter-spacing:.2em;padding-left:.2em}
+        .header-actions{gap:12px}
+        .lang-switch{gap:6px}
+      }
 
       /* ---------- Hero ---------- */
       .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;color:#F4F1EA;background:#06080A;overflow:hidden}
@@ -232,7 +239,10 @@
       .proj-media{overflow:hidden;position:relative;background:#101216}
       .proj-media img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.19,1,.22,1)}
       .proj:hover .proj-media img{transform:scale(1.03)}
-      .proj-feature .proj-media{aspect-ratio:21/10;min-height:380px}
+      /* Bỏ min-height:380px — theo CSS aspect-ratio, min-height bị "kéo" thành
+         min-width 798px (380×2.1) làm tràn ngang 70px ở tablet 761–877px.
+         Ở khổ ≥880px tỉ lệ 21/10 đã cho chiều cao ≥380px nên min-height không còn tác dụng. */
+      .proj-feature .proj-media{aspect-ratio:21/10}
       .proj-row{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:88px}
       .proj-row .proj-media{aspect-ratio:4/3}
       @media (min-width:1021px){ .proj-row .proj:nth-child(2){margin-top:76px} }
