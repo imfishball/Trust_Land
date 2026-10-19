@@ -62,7 +62,7 @@
       .serif{font-family:"Cormorant Garamond",Georgia,serif}
       .eyebrow{
         display:inline-flex;align-items:center;gap:14px;
-        font-size:11.5px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--terra-text);
+        font-size:12px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--terra-text);
       }
       .eyebrow::before{content:"";width:42px;height:1px;background:var(--terra)}
 
@@ -95,14 +95,16 @@
       nav.main a:hover{opacity:1}
       nav.main a:hover::after{transform:scaleX(1);transform-origin:left}
       .header-actions{margin-left:38px;display:flex;align-items:center;gap:22px;flex:none}
-      .lang-switch{display:flex;align-items:center;gap:9px;font-size:12.5px;letter-spacing:.12em}
+      /* gap:0 + padding 8x5: vùng chạm ≥24×24 (WCAG 2.5.8); i thêm padding 3px
+         để khoảng cách chữ VI / EN nhìn bên ngoài gần y như bản gốc */
+      .lang-switch{display:flex;align-items:center;gap:0;font-size:12.5px;letter-spacing:.12em}
       .lang-switch button{
-        border:0;background:transparent;color:inherit;padding:4px 1px;font-size:12.5px;
+        border:0;background:transparent;color:inherit;padding:8px 5px;font-size:12.5px;
         letter-spacing:.12em;opacity:.62;transition:opacity .2s;font-weight:400;
       }
       .lang-switch button:hover{opacity:.88}
       .lang-switch button.on{opacity:1;box-shadow:inset 0 -1px 0 var(--terra)}
-      .lang-switch i{font-style:normal;opacity:.5}
+      .lang-switch i{font-style:normal;opacity:.5;padding:0 3px}
       .btn-enquiry{
         display:inline-flex;align-items:center;border:1px solid rgba(244,241,234,.5);color:#F4F1EA;
         font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
@@ -121,6 +123,8 @@
       .mobile-nav a:last-child{border-bottom:0}
       header.site.open .mobile-nav{display:block}
       @media (max-width:1080px){ nav.main{display:none} .burger{display:grid} .header-actions{margin-left:auto} }
+      /* Màn hẹp: nới lùi khoảng cách trong .header-actions để nội dung vừa khớp lề 22px */
+      @media (max-width:430px){ .header-actions{gap:16px} }
       @media (max-width:620px){ .btn-enquiry{display:none} .wordmark{font-size:20px} .header-in{height:72px;gap:20px} }
       /* Màn rất hẹp (≤375px): nén header để nút menu không bị đẩy ra ngoài viewport */
       @media (max-width:375px){
@@ -168,7 +172,7 @@
       .btn-line:hover{border-color:var(--terra);color:#F0C39A;background:rgba(194,112,62,.08)}
       .scroll-cue{
         position:absolute;right:40px;bottom:0;z-index:2;display:flex;flex-direction:column;align-items:center;gap:14px;
-        font-size:10.5px;letter-spacing:.34em;text-transform:uppercase;color:rgba(244,241,234,.72);
+        font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:rgba(244,241,234,.72);
         writing-mode:vertical-rl;text-shadow:0 1px 10px rgba(0,0,0,.6);
       }
       .scroll-cue::after{content:"";width:1px;height:72px;background:linear-gradient(180deg,var(--terra),rgba(244,241,234,0));animation:cue 2.6s ease-in-out infinite}
@@ -186,7 +190,7 @@
       }
       .num b i{font-style:normal;color:var(--terra)}
       .num span{
-        display:block;margin-top:14px;font-size:11px;font-weight:400;
+        display:block;margin-top:14px;font-size:12px;font-weight:400;
         letter-spacing:.3em;text-transform:uppercase;color:#9C968A;
       }
       @media (max-width:760px){
@@ -217,7 +221,7 @@
       @media (max-width:1020px){ .story-media img{height:520px} }
       @media (max-width:560px){ .story-media img{height:420px} .story-media::before{transform:translate(12px,12px)} }
       .story-caption{
-        margin-top:38px;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);
+        margin-top:38px;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);
         display:flex;align-items:center;gap:12px;
       }
       .story-caption::before{content:"";width:26px;height:1px;background:var(--terra)}
@@ -232,7 +236,7 @@
         font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:23px;letter-spacing:.3em;
       }
       .signature .sig em{font-style:normal;color:var(--terra-text)}
-      .signature span{display:block;margin-top:8px;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted)}
+      .signature span{display:block;margin-top:8px;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted)}
 
       /* Projects */
       .proj{display:block}
@@ -303,7 +307,7 @@
       .enquiry-body > p{color:var(--body);margin:0 0 48px;max-width:480px;font-size:16px;line-height:1.8}
       .enq-form{display:grid;gap:30px;max-width:480px}
       .enq-field label{
-        display:block;font-size:11px;font-weight:500;letter-spacing:.26em;
+        display:block;font-size:12px;font-weight:500;letter-spacing:.26em;
         text-transform:uppercase;color:var(--muted);margin-bottom:4px;
       }
       .enq-field input,.enq-field textarea{
@@ -344,7 +348,7 @@
       .featured-in{display:flex;flex-direction:column;align-items:stretch;gap:28px;max-width:1320px;margin:0 auto;padding:0 40px}
       @media (max-width:640px){ .featured{padding:44px 0 50px} .featured-in{padding:0 22px;gap:24px} }
       .featured-label{
-        text-align:center;font-size:11px;font-weight:500;letter-spacing:.36em;padding-left:.36em;
+        text-align:center;font-size:12px;font-weight:500;letter-spacing:.36em;padding-left:.36em;
         text-transform:uppercase;color:#E8B287;white-space:nowrap;
       }
       .featured-view{
@@ -422,7 +426,7 @@
       @media (max-width:1080px){ .foot-grid{grid-template-columns:1fr 1fr;gap:56px 48px} }
       @media (max-width:560px){ .foot-grid{grid-template-columns:1fr;gap:48px;padding:72px 0 56px} }
       .foot-title{
-        margin:0 0 26px;font-family:"Be Vietnam Pro",sans-serif;font-size:11.5px;font-weight:500;
+        margin:0 0 26px;font-family:"Be Vietnam Pro",sans-serif;font-size:12px;font-weight:500;
         letter-spacing:.3em;text-transform:uppercase;color:#D68F5F;
       }
       .foot-brand .wordmark{color:#F4F1EA;font-size:28px}
@@ -435,17 +439,18 @@
       }
       .foot-social a:hover{border-color:var(--terra);color:#D68F5F;background:rgba(194,112,62,.08)}
       .foot-social svg{width:17px;height:17px}
-      .foot-links{list-style:none;margin:0;padding:0;display:grid;gap:15px}
+      /* padding 7 + gap 4: nhịp dòng (43px) giữ nguyên như gap 15 + padding-bottom 3 cũ, vùng chạm 39px */
+      .foot-links{list-style:none;margin:0;padding:0;display:grid;gap:4px}
       .foot-links a{
         display:inline-block;font-size:14.5px;color:#B9B4A9;position:relative;
-        padding-bottom:3px;transition:color .25s;
+        padding:7px 0;transition:color .25s;
       }
-      .foot-links a::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;background:var(--terra);transform:scaleX(0);transform-origin:right;transition:transform .35s ease}
+      .foot-links a::after{content:"";position:absolute;left:0;bottom:4px;width:100%;height:1px;background:var(--terra);transform:scaleX(0);transform-origin:right;transition:transform .35s ease}
       .foot-links a:hover{color:#D68F5F}
       .foot-links a:hover::after{transform:scaleX(1);transform-origin:left}
       .foot-contact-list{display:grid;gap:22px}
       .foot-contact-list small{
-        display:block;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:#8E897D;margin-bottom:6px;
+        display:block;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#8E897D;margin-bottom:6px;
       }
       .foot-contact-list b{font-weight:400;font-size:16.5px;color:#F4F1EA;letter-spacing:.03em}
       .foot-contact-list b a{color:inherit;transition:color .25s}
@@ -920,7 +925,15 @@
         burger.setAttribute("aria-expanded", open ? "true" : "false");
       });
       header.querySelectorAll(".mobile-nav a").forEach(function(a){
-        a.addEventListener("click", function(){ header.classList.remove("open"); });
+        a.addEventListener("click", function(){ header.classList.remove("open"); burger.setAttribute("aria-expanded","false"); });
+      });
+      /* Esc đóng menu và trả focus về nút menu */
+      document.addEventListener("keydown", function(e){
+        if (e.key === "Escape" && header.classList.contains("open")){
+          header.classList.remove("open");
+          burger.setAttribute("aria-expanded","false");
+          burger.focus();
+        }
       });
 
       /* ================= Reveal on scroll ================= */
